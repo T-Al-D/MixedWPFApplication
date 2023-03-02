@@ -31,7 +31,7 @@ namespace MixedWPF
 
         private void HotAndColdBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.NavigationService.Navigate(new HotAndCold());
         }
     }
 }
