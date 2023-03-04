@@ -19,7 +19,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.8*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
 
@@ -61,6 +61,7 @@
             <Label />
 
             <CheckBox
+                Name="checkBox"
                 Margin="7"
                 Cursor="Hand"
                 Foreground="GhostWhite">
@@ -80,14 +81,30 @@
                 MaxLength="2"
                 MaxLines="1"
                 PreviewTextInput="InputPreview" />
+
             <Button
+                Name="DrawDiamondBtn"
                 Width="90"
                 Height="25"
-                Margin="7">
+                Margin="7"
+                Click="DrawDiamondBtn_Click">
                 Draw Diamond
             </Button>
 
         </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <TextBlock
+                Name="ResultTxtBlk"
+                Margin="15"
+                Padding="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="GhostWhite"
+                FontSize="20"
+                ScrollViewer.CanContentScroll="True"
+                ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </ScrollViewer>
 
     </Grid>
 </Page>

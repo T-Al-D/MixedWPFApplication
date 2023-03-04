@@ -1,11 +1,9 @@
-﻿using System;
-
-namespace MixedLibrary.GeneralLogic
+﻿namespace MixedLibrary.GeneralLogic
 {
     public static class Check
     {
         // Method checks for a valid number! If num valid but negative, it´s converted into positive!
-        // else Method returns -1 !
+        // else Method returns lowest int value !
         public static int CheckValidNumber(string inputString)
         {
             bool validNumber = false;
