@@ -17,7 +17,7 @@
             <ColumnDefinition Width="2*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="0.8*" />
             <RowDefinition Height="4*" />
         </Grid.RowDefinitions>
 
@@ -33,5 +33,62 @@
             Foreground="MediumVioletRed">
             HotAndCold
         </Label>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBlock
+                Margin="7"
+                FontSize="12"
+                Foreground="GhostWhite"
+                TextWrapping="Wrap">
+                Explanation: Input a number which the computer should guess.
+                The Computer will slowly approach the number until its reached.
+            </TextBlock>
+
+            <TextBlock
+                Margin="7"
+                FontSize="12"
+                FontWeight="ExtraBold"
+                Foreground="GhostWhite"
+                TextWrapping="Wrap">
+                Input number between 0 and 100 !
+            </TextBlock>
+
+            <Label />
+
+            <Label />
+
+            <TextBox
+                Name="InputTextBox"
+                Width="90"
+                Height="25"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="20"
+                MaxLength="2"
+                MaxLines="1"
+                PreviewTextInput="InputPreview" />
+
+            <Button
+                Name="GuessNumber"
+                Width="90"
+                Height="25"
+                Margin="7" Click="GuessNumber_Click">
+                Guess Number
+            </Button>
+
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="1">
+            <TextBlock
+                Name="ResultTxtBlk"
+                Margin="15"
+                Padding="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="GhostWhite"
+                FontSize="20"
+                ScrollViewer.CanContentScroll="True"
+                ScrollViewer.VerticalScrollBarVisibility="Auto" />
+        </ScrollViewer>
     </Grid>
 </Page>

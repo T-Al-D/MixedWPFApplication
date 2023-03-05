@@ -43,6 +43,7 @@ namespace MixedWPF
                 diamondString = diamondString + "\n";
                 currentEmptySpaces++;
             }
+
             return diamondString;
         }
 
@@ -84,11 +85,6 @@ namespace MixedWPF
                 }
                 ResultTxtBlk.Text = diamondString;
             }
-        }
-
-        private void InputTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
-        {
-
         }
     }
 }
