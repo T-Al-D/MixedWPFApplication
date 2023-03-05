@@ -74,7 +74,7 @@ namespace MixedWPF
                         }
                         else
                         {
-                            diamondString = BuildDiamond((numInput/2) + 1);
+                            diamondString = BuildDiamond((numInput / 2) + 1);
                         }
                     }
                     // if Box NOT checked: number is size of top half, size of largest row

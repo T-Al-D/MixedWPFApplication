@@ -50,7 +50,7 @@
                 FontWeight="ExtraBold"
                 Foreground="GhostWhite"
                 TextWrapping="Wrap">
-                Input number between 0 and 100 !
+                Input number between 0 and 99 !
             </TextBlock>
 
             <Label />

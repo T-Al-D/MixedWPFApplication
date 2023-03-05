@@ -39,6 +39,10 @@ namespace MixedWPF
         // calculate new bound depending on prevGuess and nextGuess distance to _goalNum
         private void GetNewBound(int prevGuess, int nextGuess)
         {
+            int NextUpperbound = 101;
+            int NextLowerbound = -1;
+            int distanceRadiusBetweenTheGuesses = Math.Abs((prevGuess - nextGuess) / 2 );
+
             // HOT if (the distance of) nextGuess is closer to _goalNum than prevGuess
             if (Math.Abs(_goalNum - nextGuess) < Math.Abs(_goalNum - prevGuess))
             {
@@ -46,11 +50,11 @@ namespace MixedWPF
 
                 if (prevGuess > nextGuess)
                 {
-
+                    NextUpperbound = Math.Abs(nextGuess + distanceRadiusBetweenTheGuesses + 1);
                 }
-                else
+                else if (nextGuess > prevGuess)
                 {
-
+                    NextLowerbound = Math.Abs(prevGuess + distanceRadiusBetweenTheGuesses - 1);
                 }
             }
             // COLD if (the distance of) prevGuess is closer to _goalNum than nextGuess
@@ -60,12 +64,22 @@ namespace MixedWPF
 
                 if (prevGuess > nextGuess)
                 {
-
+                    NextLowerbound = Math.Abs(nextGuess + distanceRadiusBetweenTheGuesses - 1);
                 }
-                else
+                else if (nextGuess > prevGuess)
                 {
-
+                    NextUpperbound = Math.Abs(prevGuess + distanceRadiusBetweenTheGuesses + 1);
                 }
+            }
+
+            // for safety if miscalculation occured
+            if(_lowerbound < NextLowerbound && _lowerbound > -1 && _upperbound > NextLowerbound)
+            {
+                _lowerbound = NextLowerbound;
+            }
+            else if (_upperbound > NextUpperbound && _upperbound < 101 && _lowerbound < NextUpperbound)
+            {
+                _upperbound = NextUpperbound;
             }
         }
 
@@ -77,25 +91,32 @@ namespace MixedWPF
             int prevGuess = -1;
             int nextGuess = NumCreator.GetRandomNumWithinBound(_lowerbound, _upperbound);
 
-            do
+            if (_goalNum == nextGuess)
             {
-                if (_goalNum == nextGuess) 
-                {
-                    _result += "Amazing you guessed the number: " + nextGuess + " ! \n";
-                }
-                else
+                _result += "Guessed at first try: " + nextGuess + " ! \n";
+            }
+            else
+            {
+
+                while (_goalNum != nextGuess)
                 {
                     GetNewBound(prevGuess, nextGuess);
+                    _result += "Next number between " + _lowerbound + " and " + _upperbound + " .\n";
 
                     // switch the guesses for next round
                     prevGuess = nextGuess;
                     nextGuess = NumCreator.GetRandomNumWithinBound(_lowerbound, _upperbound);
+
+                    if (_goalNum == nextGuess)
+                    {
+                        _result += "Amazing you guessed the number: " + nextGuess + " ! \n";
+                    }
+
+                    // always set the content of the result TextBlock
+                    ResultTxtBlk.Text = _result;
+
                 }
-
-                // always set the content of the result TextBlock
-                ResultTxtBlk.Text = _result;    
-
-            } while (_goalNum != nextGuess);
+            }
         }
 
         private void GuessNumber_Click(object sender, System.Windows.RoutedEventArgs e)
