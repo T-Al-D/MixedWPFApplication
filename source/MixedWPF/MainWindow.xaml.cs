@@ -20,5 +20,10 @@ namespace MixedWPF
         {
             MainFrame.NavigationService.Navigate(new HotAndCold());
         }
+
+        private void MicroProtocolBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new MicroProtocol());
+        }
     }
 }

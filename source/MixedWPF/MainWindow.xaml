@@ -10,14 +10,14 @@
     Height="720"
     MinWidth="720"
     MinHeight="480"
-    Background="DarkSlateBlue"
+    Background="#000000"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.4*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -85,6 +85,20 @@
                 FontWeight="ExtraBold"
                 Foreground="MediumVioletRed">
                 HotAndCold
+            </Button>
+            <Button
+                Name="MicroProtocolBtn"
+                Margin="5"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="Black"
+                BorderBrush="#00c9b9"
+                BorderThickness="4"
+                FontFamily="Cambria"
+                FontSize="24"
+                FontWeight="ExtraBold"
+                Foreground="#00c9b9" Click="MicroProtocolBtn_Click">
+                Micro Protocol
             </Button>
         </StackPanel>
         <Frame
