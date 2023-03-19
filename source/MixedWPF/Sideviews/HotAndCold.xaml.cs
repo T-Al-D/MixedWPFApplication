@@ -41,7 +41,7 @@ namespace MixedWPF
         {
             int NextUpperbound = 101;
             int NextLowerbound = -1;
-            int distanceRadiusBetweenTheGuesses = Math.Abs((prevGuess - nextGuess) / 2 );
+            int distanceRadiusBetweenTheGuesses = Math.Abs((prevGuess - nextGuess) / 2);
 
             // HOT if (the distance of) nextGuess is closer to _goalNum than prevGuess
             if (Math.Abs(_goalNum - nextGuess) < Math.Abs(_goalNum - prevGuess))
@@ -73,7 +73,7 @@ namespace MixedWPF
             }
 
             // for safety if miscalculation occured
-            if(_lowerbound < NextLowerbound && _lowerbound > -1 && _upperbound > NextLowerbound)
+            if (_lowerbound < NextLowerbound && _lowerbound > -1 && _upperbound > NextLowerbound)
             {
                 _lowerbound = NextLowerbound;
             }

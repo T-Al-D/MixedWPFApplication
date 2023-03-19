@@ -52,7 +52,7 @@
                 FontWeight="ExtraBold"
                 Foreground="#00c9b9"
                 TextWrapping="Wrap">
-                Input the Information and create a Protocol!
+                Input the Information and create a Protocol! (Title > 3 letters !)
             </TextBlock>
 
             <StackPanel Orientation="Horizontal">
@@ -63,19 +63,20 @@
                     Title :
                 </Label>
                 <TextBox
-                    Name="TittleInputTextBox"
-                    Width="90"
+                    Name="TitleInputTextBox"
+                    Width="111"
                     Height="25"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontSize="15"
+                    FontSize="14"
                     MaxLength="25"
                     MaxLines="1" />
                 <Button
                     Name="CreateProtocolBtn"
                     Width="95"
                     Height="25"
-                    Margin="7">
+                    Margin="7"
+                    Click="CreateProtocolBtn_Click">
                     Create Protocol
                 </Button>
             </StackPanel>
@@ -89,11 +90,11 @@
                 </Label>
                 <TextBox
                     Name="DescriptionInputTextBox"
-                    Width="155"
+                    Width="177"
                     Height="25"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    FontSize="15"
+                    FontSize="13"
                     MaxLength="50"
                     MaxLines="1" />
             </StackPanel>
@@ -106,8 +107,9 @@
                 Foreground="#00c9b9"
                 TextWrapping="Wrap">
                 Input the ID (of an existing) Protocol and get or delete it!
+                No Input results in all Protocols being returned !
             </TextBlock>
-            
+
             <StackPanel Orientation="Horizontal">
                 <Label
                     Margin="7"
@@ -123,17 +125,20 @@
                     VerticalAlignment="Center"
                     FontSize="15"
                     MaxLength="3"
-                    MaxLines="1" />
+                    MaxLines="1"
+                    PreviewTextInput="InputPreview" />
                 <Button
                     Name="GetProtocolBtn"
                     Height="25"
-                    Margin="7">
+                    Margin="7"
+                    Click="GetProtocolBtn_Click">
                     Get Protocol
                 </Button>
                 <Button
                     Name="DeleteProtocolBtn"
                     Height="25"
-                    Margin="7">
+                    Margin="7"
+                    Click="DeleteProtocolBtn_Click">
                     Delete Protocol
                 </Button>
             </StackPanel>
@@ -142,7 +147,7 @@
         </StackPanel>
 
         <ScrollViewer Grid.Row="1" Grid.Column="1">
-            <ListBox Margin="12" d:ItemsSource="{d:SampleData ItemCount=5}" />
+            <DataGrid Name="ProtocolDataGrid" Margin="12" />
         </ScrollViewer>
 
     </Grid>
