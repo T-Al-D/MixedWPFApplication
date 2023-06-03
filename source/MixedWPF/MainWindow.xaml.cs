@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using MixedWPF.Sideviews;
+using System.Windows;
 
 namespace MixedWPF
 {
@@ -24,6 +25,11 @@ namespace MixedWPF
         private void MicroProtocolBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.NavigationService.Navigate(new MicroProtocol());
+        }
+
+        private void PathFinderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new PathFinder());
         }
     }
 }

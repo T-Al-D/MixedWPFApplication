@@ -94,12 +94,28 @@
                 Background="Black"
                 BorderBrush="#00c9b9"
                 BorderThickness="4"
+                Click="MicroProtocolBtn_Click"
                 FontFamily="Cambria"
                 FontSize="24"
                 FontWeight="ExtraBold"
-                Foreground="#00c9b9" Click="MicroProtocolBtn_Click">
+                Foreground="#00c9b9">
                 Micro Protocol
             </Button>
+            <Button
+                Name="PathFinderBtn"
+                Margin="5"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="Black"
+                BorderBrush="#eb9534"
+                BorderThickness="4"
+                FontFamily="Cambria"
+                FontSize="24"
+                FontWeight="ExtraBold"
+                Foreground="#eb9534" Click="PathFinderBtn_Click">
+                PathFinder
+            </Button>
+            
         </StackPanel>
         <Frame
             Name="MainFrame"
