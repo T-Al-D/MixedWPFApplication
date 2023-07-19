@@ -31,5 +31,10 @@ namespace MixedWPF
         {
             MainFrame.NavigationService.Navigate(new PathFinder());
         }
+
+        private void RegexFinderBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new RegexFinder());
+        }
     }
 }

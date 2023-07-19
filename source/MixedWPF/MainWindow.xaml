@@ -109,13 +109,28 @@
                 Background="Black"
                 BorderBrush="#eb9534"
                 BorderThickness="4"
+                Click="PathFinderBtn_Click"
                 FontFamily="Cambria"
                 FontSize="24"
                 FontWeight="ExtraBold"
-                Foreground="#eb9534" Click="PathFinderBtn_Click">
+                Foreground="#eb9534">
                 PathFinder
             </Button>
-            
+            <Button
+                Name="RegexFinderBtn"
+                Margin="5"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="Black"
+                BorderBrush="#e534eb"
+                BorderThickness="4"
+                FontFamily="Cambria"
+                FontSize="24"
+                FontWeight="ExtraBold"
+                Foreground="#e534eb" Click="RegexFinderBtn_Click">
+                RegexFinder
+            </Button>
+
         </StackPanel>
         <Frame
             Name="MainFrame"
