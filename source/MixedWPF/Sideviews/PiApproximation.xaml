@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="MixedWPF.Sideviews.PiApproximation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MixedWPF.Sideviews"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PiApproximation"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    Background="#383838"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            BorderBrush="#dec210"
+            BorderThickness="4"
+            FontSize="24"
+            FontWeight="ExtraBold"
+            Foreground="#dec210">
+            Pi Approximation
+        </Label>
+
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <DockPanel>
+                <Label Background="White">decimalDigit :</Label>
+                <TextBox
+                    x:Name="decimalDigitInput"
+                    Height="25"
+                    x:FieldModifier="public"
+                    Background="Wheat"
+                    MaxLength="2"
+                    PreviewTextInput="PreviewTextInput" />
+            </DockPanel>
+
+            <DockPanel>
+                <Label Background="White">PrecisionInput :</Label>
+                <TextBox
+                    x:Name="precisionDigitInput"
+                    Height="25"
+                    x:FieldModifier="public"
+                    Background="#EFC87F"
+                    MaxLength="4"
+                    PreviewTextInput="PreviewTextInput" />
+            </DockPanel>
+
+            <Button
+                x:Name="actionButton"
+                Height="40"
+                x:FieldModifier="public"
+                Background="#B59DD9"
+                Click="actionButton_Click">
+                <Button.Content>
+                    <TextBlock>action</TextBlock>
+                </Button.Content>
+
+            </Button>
+            <Button
+                x:Name="clearButton"
+                Height="40"
+                x:FieldModifier="public"
+                Background="#69CB4E"
+                Click="clearButton_Click">
+                <Button.Content>
+                    <TextBlock>clear</TextBlock>
+                </Button.Content>
+            </Button>
+        </StackPanel>
+
+        <StackPanel
+            x:Name="mainStack"
+            Grid.Row="1"
+            Grid.Column="1">
+            <TextBlock
+                x:Name="primaryResultTextBlock"
+                Height="50"
+                x:FieldModifier="public"
+                Background="Cyan" />
+
+            <TextBox
+                x:Name="secondaryResultTextBox"
+                Height="311"
+                x:FieldModifier="public"
+                Background="#BFD1E9"
+                IsReadOnly="True" />
+
+            <ProgressBar
+                x:Name="progressBar"
+                Grid.Row="0"
+                Grid.Column="2"
+                Height="25"
+                IsIndeterminate="False" />
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Foreground="White">
+                PI approximation is possible through multiple rectangles under the quadercircle.<LineBreak />
+                The more rectangles or steps are taken, the more precise PI gets.<LineBreak />
+                Here you can calculate how many retangles/steps have to exist under the quadercircle to calculate <LineBreak />
+                a certain decimalDigit. <LineBreak />
+                EXAMPLE: 2nd decimalDigit (3,14) needs between 1276 and 1277 steps / rectangles to be calculated.
+                
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</Page>

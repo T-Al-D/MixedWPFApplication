@@ -130,6 +130,20 @@
                 Foreground="#e534eb" Click="RegexFinderBtn_Click">
                 RegexFinder
             </Button>
+            <Button
+                Name="PiApproximationBtn"
+                Margin="5"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                Background="Black"
+                BorderBrush="#dec210"
+                BorderThickness="4"
+                FontFamily="Cambria"
+                FontSize="24"
+                FontWeight="ExtraBold"
+                Foreground="#dec210" Click="PiApproximationBtn_Click">
+                PiApproximation
+            </Button>
 
         </StackPanel>
         <Frame

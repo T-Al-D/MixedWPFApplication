@@ -36,5 +36,10 @@ namespace MixedWPF
         {
             MainFrame.NavigationService.Navigate(new RegexFinder());
         }
+
+        private void PiApproximationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new PiApproximation());
+        }
     }
 }
