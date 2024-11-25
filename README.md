@@ -18,4 +18,4 @@ Find a specific expression in text.
 
 PiApproximation (Math Calculation):
 Calculate needed steps / rectangles unter the quadercircle for a specific decimalDigit.
-Contribution from: Luca Alexander Schleiffer, Enis Akar (no Github Repositories available)
+Contribution from: BluMay (https://github.com/BluMay) and EN-AK (https://github.com/EN-AK) 
